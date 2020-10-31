@@ -1,4 +1,4 @@
-## CustomerSuccess Balancing
+# CustomerSuccess Balancing
 
 Este desafio consiste em um sistema de balanceamento entre clientes e Customer Success (CSs). Os CSs são os Gerentes de Sucesso, são responsáveis pelo acompanhamento estratégico dos clientes.
 
@@ -32,7 +32,7 @@ Sendo `n` o número de CSs, `m` o númro de clientes e `t` o número de abstenç
 - 0 < tamanho do cliente < 100.000
 - Valor máximo de t = n/2 arredondado para baixo
 
-# Input Format
+## Input Format
 
 A classe recebe 3 parâmetros:
 
@@ -41,7 +41,7 @@ A classe recebe 3 parâmetros:
 - ids dos CustomerSuccess indisponíveis
 
 
-# Output Format
+## Output Format
 
 O resultado esperado deve ser o id do CS que atende mais clientes. Com esse valor a empresa poderá fazer um plano de ação para contratar mais CS's de um nível aproximado.
 
@@ -53,4 +53,30 @@ Para este exemplo o retorno deve ser o id do 1 que é o CS que atende 4 clientes
 
 ```
 1
+```
+
+# Como rodar os testes do projeto?
+
+No terminal, clone o projeto
+
+```
+git clone <link gerado no GitHub>
+```
+
+Entre na pasta do projeto:
+
+```
+cd Seletivo.RD_Tech.Challenge
+```
+
+Instale as dependências:
+
+```
+npm install
+```
+
+Execute os testes:
+
+```
+npm run test
 ```
