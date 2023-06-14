@@ -7,6 +7,9 @@ function customerSuccessBalancing(
   const sortedAvailableCS = customerSuccess
     .filter((cs) => !customerSuccessAway.includes(cs.id))
     .sort((cs1, cs2) => cs1.score - cs2.score);
+  
+  // se não há CS disponível, retorna 0
+  if (sortedAvailableCS.length === 0) return 0;
 
   // objeto com o id de cada CS como chave e o número de clientes que ele atende como valor
   const csCounts = sortedAvailableCS.reduce((counts, cs) => {
@@ -143,4 +146,11 @@ test("Scenario 8", () => {
   const customers = mapEntities([90, 70, 20, 40, 60, 10]);
   const csAway = [2, 4];
   expect(customerSuccessBalancing(css, customers, csAway)).toEqual(1);
+});
+
+test("Scenario 9", () => {
+  const css = mapEntities([60, 40, 95, 75]);
+  const customers = mapEntities([90, 70, 20, 40, 60, 10]);
+  const csAway = [1, 2, 3, 4];
+  expect(customerSuccessBalancing(css, customers, csAway)).toEqual(0);
 });
