@@ -8,6 +8,7 @@ function customerSuccessBalancing(
     .filter((cs) => !customerSuccessAway.includes(cs.id))
     .sort((cs1, cs2) => cs1.score - cs2.score);
   
+  // Essa regra é apenas para fins didáticos, pois uma das regras do processo é que o valor máximo de abstenções de CSs = número de CSs/2 arredondado para baixo
   // se não há CS disponível, retorna 0
   if (sortedAvailableCS.length === 0) return 0;
 
