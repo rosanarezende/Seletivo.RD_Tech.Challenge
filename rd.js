@@ -54,6 +54,19 @@ function customerSuccessBalancing(
   );
 
   return winnerCs;
+  
+  // ou
+  // const winnerCs = Object.entries(csCounts).reduce((winner, [id, count]) => {
+  //   if (count > winner.count) {
+  //     return { id, count };
+  //   }
+  //   if (count === winner.count) {
+  //     return { id: 0, count };
+  //   }
+  //   return winner;
+  // }, { id: 0, count: 0 });
+
+  // return Number(winnerCs.id);
 }
 
 
