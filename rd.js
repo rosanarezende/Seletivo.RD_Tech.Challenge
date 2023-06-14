@@ -26,25 +26,34 @@ function customerSuccessBalancing(
       csCounts[suitableCS.id]++;
     }
   });
+  
+  // Ou
+  // const csCounts = {};
+  // customers.forEach((customer) => {
+  //   const suitableCS = sortedAvailableCS.find(cs => customer.score <= cs.score);
+  //   if (suitableCS) {
+  //     csCounts[suitableCS.id] = (csCounts[suitableCS.id] || 0) + 1;
+  //   }
+  // });
 
   let maxClients = 0;
-  let maxCs = 0;
+  let winnerCs = 0;
 
   sortedAvailableCS.forEach((cs) => {
     // se o CS atual tiver o mesmo número de clientes que o CS anterior, não há CS com mais clientes
     if (csCounts[cs.id] === maxClients) {
-      maxCs = 0;
+      winnerCs = 0;
     }
 
     // se o CS atual tiver mais clientes que o CS anterior, ele é o CS com mais clientes
     if (csCounts[cs.id] > maxClients) {
       maxClients = csCounts[cs.id];
-      maxCs = cs.id;
+      winnerCs = cs.id;
     }
   }
   );
 
-  return maxCs;
+  return winnerCs;
 }
 
 
